@@ -1,11 +1,21 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../config/configbd.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
- 
+$username = $password = $confirm_password = $telephone = $fname = $lname = "";
+$username_err = $password_err = $confirm_password_err = $telephone_err = $fname_err = $lname_err = "";
+
+/* #####SE NECESITA AÑADIR AL FORMULARIO REGISTER.PHP LO SIGUIENTE: ######
+        - Un input para telefono y verificación de error
+        - Un input para nombre y verificación de error
+        - Un input para apellido y verificación de error
+
+El statement para insertar datos debería verse de la siguiente manera:
+# Linea de código: 80     $sql= " INSERT INTO usuarios (username, password, first_name, last_name, telephone) VALUES (?, ?, ?, ?, ?) ";
+
+*/
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     

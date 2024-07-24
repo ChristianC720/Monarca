@@ -11,6 +11,7 @@ require_once '../config/configbd.php';
 mysqli_set_charset($link,"utf8");
 
 #$inchert = 'nononono';
+#$inchert = 'wawawawawa';
 #if ($inchert == 'wawawawawa'){
 #$pass = password_hash("Cesar@123", PASSWORD_DEFAULT);
 #$fecha = date("Y-m-d");
