@@ -1,23 +1,6 @@
 <?php
-// Initialize the session
-session_start();
-
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-}
-require_once '../config/configbd.php';
-mysqli_set_charset($link,"utf8");
-
-#$inchert = 'nononono';
-#$inchert = 'wawawawawa';
-#if ($inchert == 'wawawawawa'){
-#$pass = password_hash("Cesar@123", PASSWORD_DEFAULT);
-#$fecha = date("Y-m-d");
-#$sql= " INSERT INTO usuarios (username, password, first_name, last_name, telephone) VALUES ('23393274@utcancun.edu.mx', '$pass', 'Christian', 'Coronel', '9983714615') ";
-#$resultado = mysqli_query($link, $sql);
-#}
+/* Initialize the session */ session_start();
+#require_once "catalogo/requestCatalogo.php";
 ?>
 
 <!DOCTYPE html>
@@ -26,18 +9,43 @@ mysqli_set_charset($link,"utf8");
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{ font: 14px sans-serif; text-align: center; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="consultBooks.js"></script>
 </head>
 <body>
-<h1 class="my-5"><div class="body1">Hola, <b><?php echo htmlspecialchars($_SESSION["id"]); ?></b>, Bienvenido al catálogo de productos.
-        <p>
-            <a href="reset-password.php" class="btn btn-warning">Cambiar Contraseña</a>
-            <a href="logout.php" class="btn btn-danger ml-3">Cerrar Sesión</a></div>
-    </p></h1>
+<div class="navbar">
+    <ul>
+    <!-- LOGO CON REDIRECCIONAMIENTO A LA PÁGINA PRINCIPAL -->
+        <li><a href="index.php" class='logo' ><img src="logo_monarca.png" alt="LogoMonarca" width="50px"></a></li>
 
-<p>¿Que es lo que quieres hacer?</p>
+        <!-- INICIAR SESION / PERFIL -->
+        <?php if(isset($_SESSION["loggedin"])) {
+            echo "<li><a href='perfil.php' class='active'>" . htmlspecialchars($_SESSION["username"]) . '</a></li>';
+            echo "<li><a href='logout.php' class='btn btn-danger ml-1'>Cerrar Sesión </a></li>"; }
+            else { echo "<li><a href='login.php' class='active'> Iniciar Sesion </a></li>"; } ?>
+
+    <!-- BARRA DE BÚSQUEDA -->
+    <li><div class="search-container">
+            <input type="text" placeholder="Search.." name="search_item">
+            <button type="submit"><i class="fa fa-search"></i></button>
+    </div></li>
+
+    <!-- REDIRECCIONAMIENTO A: ACERCA DE -->
+        <li><a href="" class="link">Acerca de</a></li>
+
+    <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
+    <li><a href="" class="link">Soporte al cliente</a></li>
+
+    <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
+    <li><a href="" class="fa fa-shopping-cart"><?php echo '<br>$' . $carrito_total = 00.00; ?></a></li>
+        </ul>
+</div>
+
+<h1><p>Catálogo de Productos:</p></h1>
+
+<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a
+
 
 
 </body>

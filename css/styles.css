@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 1%;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+    display: block;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15),
+    0px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    z-index: 2;
+    overflow: hidden;
+    background-color: #fff;
+    position: sticky;
+    top: 1%;
+}
+.navbar ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     margin-left: 4em;
+ }
+.navbar ul li {
+    display: inline-block;
+    text-decoration: none;
+}
+.navbar ul li a {
+    padding: 1em 1em 1em 1em;
+    color: #090909;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* Style the search bar */
+.navbar .search-container {
+    float: left;
+}
+.navbar input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.navbar .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+.navbar .search-container button:hover {
+    background: #ccc;
+}
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #a8a8a8;
+    color: white;
+}
+/* Active/current link */
+.navbar a.active {
+    background-color: #666;
+    color: black;
+}
+.logo:hover{
+    text-decoration: none;
+}
+.link:link{
+    text-decoration: none;
+}
+.link:visited{
+    text-decoration: none;
+}
+.link{
+    color: #3562a9;
+    font-weight:700;
+}
+.link:hover{
+    color: #5F5F5F;
+    border-bottom: 2px solid #5F5F5F;
+}
+/*
+.tituloCatalogo{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+.catalogo{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    
+}
+.book{
+    display: grid;
+    width: 70%;
+    margin-bottom: 30px;
+    height: 700px;
+}
+.book img{
+    width: 100%;
+}
+.book span{
+    display: block;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    
+}
+.book span b{
+    color: #00BB2D;
+}
+.book .titleBook{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.book a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #00BB2D;
+    color: white;
+    padding: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    align-self: end;
+}
+*/
+/* RESPONSIVIDAAAD */
+@media screen and (min-width: 1000px) {
+/*    .catalogo{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .header{
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+        align-content: center;
+        }
+    .header li{
+        list-style: none;
+        display: inline;
+        margin-right: 50px;
+    }
+    .header img{
+        display: block;
+        width: 70px;
+        margin-left: 70px;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+    }
+*/
+
+
+}
