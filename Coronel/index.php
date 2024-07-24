@@ -1,6 +1,5 @@
 <?php
 /* Initialize the session */ session_start();
-#require_once "catalogo/requestCatalogo.php";
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +43,18 @@
 
 <h1><p>Catálogo de Productos:</p></h1>
 
-<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a
+<?php
+require_once "requestCatalogo.php";
 
+while($consulta  = mysqli_fetch_array($result)) {
+    echo "<a href='#'class='product'> <ul><div class='card' style='width: 18rem;'>
+    <img src='imagefake' class='card-img-top' alt='imagen de $consulta[name]'>
+    <div class='card-body'>
+    <h5 class='card-title'>$consulta[name]</h5>
+    $$consulta[price]</div></div></ul></a>";
 
+}
+?>
 
 </body>
 </html>
