@@ -22,6 +22,28 @@
     background-color: #fff;
     top: 1%;
 }
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 15px;
+    font-size: 17px;
+    width: 25%;
+}
+.tablink:hover {
+    background-color: #777;
+}
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 80px 20px;
+    height: 100%;
+}
+
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
     width: fit-content;
@@ -155,6 +177,7 @@
     padding: 20px;
 }
 .side {
+    height: fit-content;
     -ms-flex: 10%;
     flex: 10%;
     background-color: #f1f1f1;
@@ -169,9 +192,14 @@
     padding: 20px;
 }
 .footer {
-    padding: 20px;
-    text-align: center;
+    height: fit-content;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background: #ddd;
+    color: black;
+    text-align: center;
 }
 /*
 .tituloCatalogo{

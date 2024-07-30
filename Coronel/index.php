@@ -22,7 +22,7 @@
 </div>
     <div class="row">
     <div class="side">
-        <div class="fakeimg" style="height:60px;">PUBLICIDAD</div>
+        <div class="fakeimg" style="height:500px;">PUBLICIDAD</div>
     </div>
     <div class="main">
         <?php
@@ -30,8 +30,7 @@
         $rownumbers = 1;
         echo "<div class='product-container'>";
         while($consulta  = mysqli_fetch_array($result) and ($rownumbers <= 12)) {
-            echo "<a href='#' class='product'> 
-    <ul>
+            echo "<a href='#' class='product'><ul>
         <div class='card' style='width: 18rem;'>
         <img src='imagefake' class='fakeimage' alt='imagen de $consulta[name]' height='200px'>
         <div class='card-body'>
@@ -40,12 +39,10 @@
             $rownumbers++;
         }
         echo "</div>";
-
         ?>
     </div>
     <div class="side">
-
-        <div class="fakeimg" style="height:60px;">PUBLICIDAD</div>
+        <div class="fakeimg" style="height:500px;">PUBLICIDAD</div>
     </div>
 
 </div>
@@ -53,8 +50,6 @@
 <div class="footer">
     <h2>Footer</h2>
 </div>
-
-
 
 <script>
     function myFunction() {

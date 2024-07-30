@@ -1,7 +1,7 @@
 <div class="navbar" id="navbar1">
     <ul>
         <!-- LOGO CON REDIRECCIONAMIENTO A LA PÁGINA PRINCIPAL -->
-        <li><a href="index.php" class='logo' ><img src="logo-monarca.png" alt="LogoMonarca" width="50px"></a></li>
+        <li><a href="index.php" class='logo'><img src="logo-monarca.png" alt="LogoMonarca" width="50px"></a></li>
 
         <!-- INICIAR SESION / PERFIL -->
         <?php if(isset($_SESSION["loggedin"])) {
@@ -11,8 +11,10 @@
 
         <!-- BARRA DE BÚSQUEDA -->
         <li><div class="search-container">
-                <input type="text" placeholder="Search.." name="search_item">
+                <form action="catalogo.php" method="POST">
+                <input type="text" placeholder="Search.." name="search_item" value="<?php if(isset($search)){echo $search;} ?>">
                 <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div></li>
 
         <!-- REDIRECCIONAMIENTO A: ACERCA DE -->
@@ -26,6 +28,6 @@
 
         <!-- REDIRECCIONAMIENTO A: ADMINISTRADOR -->
         <?php if(isset($_SESSION["type_id"]) && $_SESSION["type_id"] == "1") {
-            echo "<li><a href='admin.php' class='active'>" . 'ADMIN </a></li>'; } ?>
+            echo "<li><a href='indexadmin.php' class='active'>" . 'ADMIN </a></li>'; } ?>
     </ul>
 </div>

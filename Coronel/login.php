@@ -36,7 +36,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
         $sql = "SELECT id, type_id, username, password, first_name FROM usuarios WHERE username = ?";
-        
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
@@ -79,6 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             
                             // Redirect user to welcome page
                             header("location: index.php");
+                            exit;
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Nombre o Contraseña inválidos.";
