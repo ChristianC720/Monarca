@@ -30,12 +30,17 @@ mysqli_set_charset($link, "utf8");
         require_once "requestCatalogo.php";
         echo "<div class='product-container'>";
         while($consulta  = mysqli_fetch_array($result)){
-            echo "<a href='#' class='product'><ul>
+            echo "
+        <a href='#' class='product'><ul>
         <div class='card' style='width: 18rem;'>
         <img src='imagefake' class='fakeimage' alt='imagen de $consulta[name]' height='200px'>
         <div class='card-body'>
         <h5 class='card-title'>$consulta[name]</h5>
-        $$consulta[price] </div></div></ul></a>";
+        $$consulta[price] 
+        </div>
+        </div>
+        </ul>
+        </a>";
         }
         echo "</div>";
         ?>
