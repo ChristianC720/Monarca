@@ -27,11 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respuesta de Soporte Técnico</title>
+    <title>Respuesta Automática de Soporte Técnico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Respuesta de Soporte Técnico</h1>
+<img src="img/Logo.jpeg" alt="Logo" style="width: 100px; margin-bottom: 20px;">
+    <h1>Respuesta Automática de Soporte Técnico</h1>
     <p><?php echo htmlspecialchars($response); ?></p>
     <a href="formulario.html">Volver al formulario</a>
 </body>
