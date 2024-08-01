@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *{
+    max-width: 100%;
     padding: 0px;
     margin: 0px;
 }
@@ -178,6 +179,7 @@
 }
 .side {
     height: fit-content;
+    width: max(60px);
     -ms-flex: 10%;
     flex: 10%;
     background-color: #f1f1f1;
@@ -193,7 +195,7 @@
 }
 .footer {
     height: fit-content;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;

@@ -18,13 +18,12 @@ mysqli_set_charset($link, "utf8");
 <?php  require('navbar.php'); ?>
 <div class="row">
     <div class="side"></div>
-    <div class="main">
-    </div>
+    <div class="main"></div>
     <div class="side"></div>
 </div>
 <div class="row">
     <div class="side">
-        <div class="fakeimg" style="height:500px;"><H4>FILTROOOS</H4></div>
+        <div class="fakeimg" style="height:500px;"><H4>FILTROS</H4></div>
     </div>
     <div class="main">
         <?php
@@ -47,19 +46,8 @@ mysqli_set_charset($link, "utf8");
 
 </div>
 
-<div class="footer">
+<div class="footer" style="height: 100px">
     <h2>Footer</h2>
 </div>
-
-<script>
-    function myFunction() {
-        var x = document.getElementById("navbar1");
-        if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
-        }
-    }
-</script>
 </body>
 </html>

@@ -245,6 +245,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && $_SESSION["
         ?>
     </div>
 </div>
-
+<div class="footer" style="height: 100px">
+    <h2>Footer</h2>
+</div>
 </body>
 </html>
