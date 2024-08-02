@@ -90,9 +90,6 @@ $stmt->close();
     </div>
 
 
-
-    </nav>
-
 </body>
 
 </html>

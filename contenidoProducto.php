@@ -12,7 +12,7 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 // Guardar la URL de retorno en la sesión
 $_SESSION['url_retorno'] = "Detalles_del_producto.php?id=" . $id;
 // Consulta la base de datos para obtener los detalles del producto
-$sql = "SELECT id, name, price, description FROM productos WHERE id = ?";
+$sql = "SELECT id, name, price, description, image FROM productos WHERE id = ?";
 $stmt = $link->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
@@ -61,21 +61,16 @@ $link->close();
     <?php if ($product): ?>
         <div class="producto">
             <div class="img-especifica">
-                <img src="" alt="<?php echo htmlspecialchars($product['name']); ?>" />
+                <?php $imageData = base64_encode($product['image']);
+                echo "<img src='data:image/jpeg;base64,$imageData' class='card-img-top' alt='Imagen de $product[name]' style='height: max-content;'>" ?>
             </div>
             <div class="detalle-producto">
                 <h1 class="nombre"><?php echo htmlspecialchars($product['name']); ?></h1>
                 <p>Cantidad: 100
                 <p>Precio: <?php echo isset($product['price']) ? '$' . number_format($product['price'], 2) : 'N/A'; ?></p>
                 <p><?php echo $product['description']   ? : 'N/A'; ?></p>
-                <!-- Formulario para agregar al carrito -->
-                <form method="POST">
-                    <input type="hidden" name="producto_id" value="<?php echo htmlspecialchars($product['id']); ?>">
-                    <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($product['name']); ?>">
-                    <input type="number" name="cantidad" id="cantidad" min="1" value="1" hidden>
-                    <button type="submit" class="btn btn-primary" name="add_to_cart">Agregar al carrito</button>
-                    <button type="submit" class="btn btn-primary" name="add_to_favs">Agregar a favoritos</button>
-                </form>
+                <!--agregar al carrito o favoritos-->
+                    <p><a href="cart-add.php?id=<?php echo $id; ?>" name="add" value="add" class="btn btn-primary">Añadir al carrito</a><p>
 
             </div>
         </div>

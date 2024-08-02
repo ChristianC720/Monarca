@@ -1,5 +1,12 @@
 <?php
 /* Initialize the session */ session_start();
+if (!isset($_SESSION['loggedin'])) {
+    echo'<script type="text/javascript">
+    alert("Sesión no iniciada");
+    window.location.href="index.php";
+</script>';
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,18 +20,11 @@
 </head>
 <body>
 <?php  require('navbar.php'); ?>
-<bo
+<div class="row">
+    <div class="side"></div>
+    <div class="main"></div>
+</div>
 <a href="reset-password.php" class="btn btn-primary">Cambiar Contraseña</a>
-<script>
-    function myFunction() {
-        var x = document.getElementById("navbar1");
-        if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
-        }
-    }
-</script>
 </body>
 </html>
 

@@ -27,8 +27,8 @@
         <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
         <li><a href="" class="link">Soporte al cliente</a></li>
 
-        <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
-        <li><a href="" class="fa fa-shopping-cart"><?php echo '<br>$' . $carrito_total = 00.00; ?></a></li>
+        <!-- REDIRECCIONAMIENTO A: CARRITO -->
+        <li><a href="cart.php" class="fa fa-shopping-cart"><?php if(isset($_SESSION['sum'])){ echo '<br>' . $_SESSION['sum']  ? : '00.00';} ?></a></li>
 
         <!-- REDIRECCIONAMIENTO A: ADMINISTRADOR -->
         <?php if(isset($_SESSION["type_id"]) && $_SESSION["type_id"] == "1") {

@@ -4,10 +4,12 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    echo'<script type="text/javascript">
+                            alert("Usted ya inició sesión.");
+                            window.location.href="index.php";
+                        </script>';
     exit;
 }
- 
 // Include config file
 require_once "../config/configbd.php";
  
@@ -75,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["type_id"] = $type_id;
                             $_SESSION["username"] = $username;
                             $_SESSION["first_name"] = $fname;
-                            
+                            $_SESSION['sum'] = 0;
                             // Redirect user to welcome page
                             header("location: index.php");
                             exit;

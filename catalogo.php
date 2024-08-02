@@ -44,11 +44,12 @@ mysqli_set_charset($link, "utf8");
         require_once "requestCatalogo.php";
         echo "<div class='product-container'>";
         while($consulta  = mysqli_fetch_array($result)){
+            $imageData = base64_encode($consulta['image']);
             $id=$consulta["id"];
             echo "
         <a href='contenidoProducto.php?id=$id' class='product'><ul>
         <div class='card' style='width: 18rem;'>
-        <img src='imagefake' class='fakeimage' alt='imagen de $consulta[name]' height='200px'>
+        <img src='data:image/jpeg;base64,$imageData' class='card-img-top' alt='Imagen de $consulta[name]' style='height: max-content;'>
         <div class='card-body'>
         <h5 class='card-title'>$consulta[name]</h5>
         $$consulta[price] 

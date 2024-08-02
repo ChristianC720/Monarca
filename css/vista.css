@@ -10,7 +10,7 @@
         border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
-        font-family: 'Lucida Console';
+        
         text-decoration: none;
       }
 
@@ -32,7 +32,7 @@
       border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
       transition: transform 0.3s ease-in-out;
       cursor: pointer;
-      font-family: 'Lucida Console';
+      
       text-decoration: none;
       font-size: 25px;
     }
@@ -64,7 +64,7 @@
 
       /*CUERPO*/
       body {
-        font-family: 'lucida console';
+        
         margin: 0;
         padding: 0;
         background-color: #F1EFC9;
@@ -180,7 +180,6 @@
  /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ TEXTO ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
   h1{
     color:#000;
-    font-family:'lucida console';
   }
 
 .box-container {
