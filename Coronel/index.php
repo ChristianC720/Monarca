@@ -10,20 +10,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="consultBooks.js"></script>
+    <script src="adminjs.js"></script>
 </head>
 <body>
 <?php  require('navbar.php'); ?>
 <div class="row">
-    <div class="side"></div>
-    <div class="main"></div>
-    <div class="side"></div>
+    <div class="side" style="background: none">
+        <div class="fakeimg" style="position: fixed; margin-left: 10px; width: max(9%)"><img src="../imgs/ONIKQ00.jpg" style="height: fit-content;">PUBLICIDAD</img></div></div>
+    <div class="main">
+            <div style="position: relative; margin-right: 10px; height: auto"><img src="../imgs/ofertas.png">PUBLICIDAD</img></div>
+    </div>
+    <div class="side" style="background: none">
+        <div class="fakeimg" style="position: fixed; margin-right: 10px; width: max(9%)"><img src="../imgs/ONIKQ00.jpg" style="height: fit-content;">PUBLICIDAD</img></div>
+    </div>
 </div>
     <div class="row">
-    <div class="side">
-        <div class="fakeimg" style="height:500px;">PUBLICIDAD</div>
-    </div>
+        <div class="side" style="background: none"></div>
     <div class="main">
+        <div></div>
         <?php
         require_once "requestCatalogo.php";
         $rownumbers = 1;
@@ -40,9 +44,7 @@
         echo "</div>";
         ?>
     </div>
-    <div class="side">
-        <div class="fakeimg" style="height:500px;">PUBLICIDAD</div>
-    </div>
+        <div class="side" style="background: none"></div>
 
 </div>
 
