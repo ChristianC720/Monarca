@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="adminjs.js"></script>
 </head>
-<body>
-<?php  require('navbar.php'); ?>
-<div class="row">
+<body style="background-color: RGBA(247, 147, 30,1);">
+<?php  require('navbar1.php'); ?>
+<div class="row" >
     <div class="side" style="background: none">
         <div class="fakeimg" style="position: fixed; margin-left: 10px; width: max(9%)"><img src="../imgs/ONIKQ00.jpg" style="height: fit-content;">PUBLICIDAD</img></div></div>
-    <div class="main">
-            <div style="position: relative; margin-right: 10px; height: auto"><img src="../imgs/ofertas.png">PUBLICIDAD</img></div>
+    <div class="main" style="background-color: RGBA(247, 147, 30,1);">
+            <div class="navbar" style="position: relative; margin-right: 10px; height: auto"><img src="../imgs/ofertas.png">PUBLICIDAD</img></div>
     </div>
     <div class="side" style="background: none">
         <div class="fakeimg" style="position: fixed; margin-right: 10px; width: max(9%)"><img src="../imgs/ONIKQ00.jpg" style="height: fit-content;">PUBLICIDAD</img></div>
@@ -33,7 +33,7 @@
         $rownumbers = 1;
         echo "<div class='product-container'>";
         while($consulta  = mysqli_fetch_array($result) and ($rownumbers <= 12)) {
-            echo "<a href='#' class='product'><ul>
+            echo "<a href='contenidoProducto.php' class='product'><ul>
         <div class='card' style='width: 18rem;'>
         <img src='imagefake' class='fakeimage' alt='imagen de $consulta[name]' height='200px'>
         <div class='card-body'>
