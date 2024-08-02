@@ -27,13 +27,14 @@
     <div class="row">
         <div class="side" style="background: none"></div>
     <div class="main">
-        <div></div>
+        <div class="product navbar" style="font-size: 5vh">SUGERIDOS</div><br>
         <?php
         require_once "requestCatalogo.php";
         $rownumbers = 1;
         echo "<div class='product-container'>";
         while($consulta  = mysqli_fetch_array($result) and ($rownumbers <= 12)) {
-            echo "<a href='contenidoProducto.php' class='product'><ul>
+            $id=$consulta["id"];
+            echo "<a href='contenidoProducto.php?id=$id' class='product'><ul>
         <div class='card' style='width: 18rem;'>
         <img src='imagefake' class='fakeimage' alt='imagen de $consulta[name]' height='200px'>
         <div class='card-body'>
