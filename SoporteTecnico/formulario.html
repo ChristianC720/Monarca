@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Técnico</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Formulario de Soporte Técnico</h1>
+    <img src="img/Logo.jpeg" alt="Logo" style="width: 100px; margin-bottom: 20px;">
+    <form action="proceso.php" method="POST">
+        <label for="problem">Seleccione el problema:</label><br>
+        <select name="problem" id="problem">
+            <option value="no_internet">La página carga muy lento o no carga</option>
+            <option value="problema_carrito">El carrito de compras presenta problemas</option>
+            <option value="problema_software">Problemas con el software</option>
+            <option value="problema_navegacion">Problemas con la búsqueda de productos</option>
+        </select><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <a href="generar_ticket.html" class="ticket-link">Generar Ticket de Soporte</a>
+    <a href="index.html" class="back-link">Volver al Inicio</a>
+</body>
+</html>
