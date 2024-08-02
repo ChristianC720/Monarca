@@ -15,7 +15,11 @@
                 <input type="text" placeholder="Search.." name="search_item" value="<?php if(isset($search)){echo $search;} ?>">
                 <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
-            </div></li>
+            </div>
+        </li>
+
+        <!-- REDIRECCIONAMIENTO A: CATÁLOGO -->
+        <li><a href="catalogo.php" class="link">Catálogo</a></li>
 
         <!-- REDIRECCIONAMIENTO A: ACERCA DE -->
         <li><a href="" class="link">Acerca de</a></li>
