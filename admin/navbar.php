@@ -21,8 +21,8 @@
         <!-- REDIRECCIONAMIENTO A: CATÁLOGO -->
         <li><a href="/GitHub/Monarca/catalogo/catalogo.php" class="link">Catálogo</a></li>
 
-        <!-- REDIRECCIONAMIENTO A: ACERCA DE -->
-        <li><a href="/GitHub/Monarca/" class="link">Acerca de</a></li>
+        <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
+        <li><a href="/GitHub/Monarca/SoporteTecnico/index.html" class="link">Soporte al cliente</a></li>
 
         <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
         <li><a href="/GitHub/Monarca/SoporteTecnico/index.html" class="link">Soporte al cliente</a></li>

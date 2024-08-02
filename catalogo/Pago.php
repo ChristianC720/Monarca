@@ -1,5 +1,17 @@
 <?php
-include '/GitHub/Monarca/config/configbd.php';
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
 session_start();
 
 $user_id = $_SESSION['user_id'];
@@ -12,7 +24,7 @@ mysqli_query($link, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jholsan | Uniformes Médicos</title>
+    <title>Monarca</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link href='https://fonts.googleapis.com/css?family=Delius Swash Caps' rel='stylesheet'>

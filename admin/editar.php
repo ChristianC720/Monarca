@@ -1,5 +1,18 @@
 <?php
-    require_once "/GitHub/Monarca/config/configbd.php";
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
+
     mysqli_set_charset($link,"utf8");
 
 $errores = [];
@@ -29,7 +42,7 @@ if (!$resultado) {
         }
         h1 {
             text-align: center;
-            color: #4CAF50;
+            color: #ffbc0c;
         }
         table {
             width: 100%;
@@ -42,7 +55,7 @@ if (!$resultado) {
             text-align: left;
         }
         th {
-            background-color: #4CAF50;
+            background-color: #ffbc0c;
             color: white;
         }
         .button {
@@ -53,10 +66,10 @@ if (!$resultado) {
             color: white;
         }
         .button-editar {
-            background-color: #4CAF50;
+            background-color: #ffbc0c;
         }
         .button-editar:hover {
-            background-color: #45a049;
+            background-color: #ffbc0c;
         }
     </style>
 </head>
@@ -76,9 +89,13 @@ if (!$resultado) {
                 <td><?php echo htmlspecialchars($products['price']); ?></td>
                 
                 <td>
-                    <form action="/GitHub/Monarca/admin/editar1.php" method="get">
+                    <form action="editar1.php" method="get">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($products['id']); ?> "hidden>
                         <button type="submit" name="tabla" value="Editar">Editar</button>
+                    </form>
+                    <form action="eliminar.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($products['id']); ?>"hidden>
+                        <button type="submit" name="tabla" value="Eliminar">Eliminar</button>
                     </form>
                 </td>
             </tr>

@@ -4,12 +4,26 @@ session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: /GitHub/Monarca/Sesion/login.php");
+    header("location: login.php");
     exit;
 }
  
 // Include config file
-require_once "/GitHub/Monarca/config/configbd.php";
+
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
+
  
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";
@@ -54,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_execute($stmt)){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: /GitHub/Monarca/Sesion/login.php");
+                header("location: login.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -98,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="/GitHub/Monarca/Sesion/perfil.php">Cancel</a>
+                <a class="btn btn-link ml-2" href="C:/Users/Documents/GitHub/Monarca/Sesion/perfil.php">Cancel</a>
             </div>
         </form>
     </div>    

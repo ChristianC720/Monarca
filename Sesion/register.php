@@ -1,6 +1,17 @@
 <?php
-// Include config file
-require_once "/GitHub/Monarca/config/configbd.php";
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $telephone = $fname = $lname = "";
@@ -44,6 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $username_err = "Este nombre de Usuario ya está en uso.";
                 } else{
                     $username = trim($_POST["username"]);
+                    $fname = trim($_POST["name"]);
                 }
             } else{
                 echo "¡Lo siento! Algo salió mal, intentélo de nuevo más tarde.";
@@ -77,20 +89,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO usuarios (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO usuarios (username, first_name, password) VALUES (?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_name, $param_password);
             
             // Set parameters
             $param_username = $username;
+            $param_name = $fname;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: /GitHub/Monarca/Sesion/login.php");
+                header("location: login.php");
             } else{
                 echo "¡Lo siento! Algo salió mal, intentélo de nuevo más tarde.";
             }
@@ -125,7 +138,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Usuario</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="name" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $fname; ?>">
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            </div>
             <div class="form-group">
                 <label>Contraseña</label>
                 <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
@@ -140,7 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Registrarse">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reiniciar">
             </div>
-            <p>¿Ya tienes una cuenta? <a href="/GitHub/Monarca/Sesion/login.php">Inicia Sesión</a>.</p>
+            <p>¿Ya tienes una cuenta? <a href="C:/Users/Documents/GitHub/Monarca/Sesion/login.php">Inicia Sesión</a>.</p>
         </form>
     </div></center>    
 </body>

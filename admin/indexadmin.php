@@ -1,5 +1,17 @@
 <?php
-require_once "/GitHub/Monarca/config/configbd.php";
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
 mysqli_set_charset($link,"utf8");
 /* Initialize the session */ session_start();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && $_SESSION["type_id"] != "1"){
@@ -29,7 +41,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && $_SESSION["
     #Contact {background-color: floralwhite;}
     #About {background-color: floralwhite;}
 </style>
-<?php  require('/GitHub/Monarca/admin/navbar.php'); ?>
+<?php  require('navbar.php'); ?>
 <div class="row">
     <div class="side" style="background: none"></div>
     <div class="main"></div>
@@ -37,13 +49,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && $_SESSION["
 <div class="row">
     <div class="side">
         <h4>Opciones</h4>
-        <table>
-            <tr><th><button class="tablink" style="width: 100%" onclick="openPage('AAdmin', this, 'RGBA(247, 147, 30,1 )')">Añadir Administradores</button></th></tr>
-            <tr><th><button class="tablink" style="width: 100%" onclick="openPage('EAdmin', this, 'RGBA(247, 147, 30,1 )')">Eliminar Administradores</button></th></tr>
             <tr><th><button class="tablink" style="width: 100%" onclick="openPage('AProd', this, 'RGBA(247, 147, 30,1 )')">Añadir Productos</button></th></tr>
             <tr><th><button class="tablink" style="width: 100%" onclick="openPage('EdProd', this, 'RGBA(247, 147, 30,1 )')">Editar Productos</button></th></tr>
-            <tr><th><button class="tablink" style="width: 100%" onclick="openPage('ElProd', this, 'RGBA(247, 147, 30,1 )')">Eliminar Productos</button></th></tr>
-        </table>
+ </table>
     </div>
     <div class="main">
         <div style="text-align: center"><H2>Funciones de Administrador</H2></div>
@@ -83,7 +91,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && $_SESSION["
                 </div>
             </div>
             <!--Eliminar-->
-            <div id="EAdmin" class="tabcontent">
+            <div id="EasdAdmin" class="tabcontent">
                 <h3>Eliminar Administradores</h3>
                 <div class="wrapper">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -232,12 +240,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['ElProd']) {
     } else {
         echo'<script type="text/javascript">
     alert("No se ha podido insertar el producto, intente de nuevo");
-    window.location.href="/GitHub/Monarca/admin/indexadmin.php"';
+    window.location.href="indexadmin.php"';
         exit;
     }
 }
 ?>
-            <div id="ElProd" class="tabcontent">
+            <div id="EAdmin" class="tabcontent">
     <h3>Añadir Productos</h3>
     <div class="wrapper">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">

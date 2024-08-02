@@ -6,12 +6,25 @@ session_start();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     echo'<script type="text/javascript">
                             alert("Usted ya inició sesión.");
-                            window.location.href="/GitHub/Monarca/index.php";
+                            window.location.href="../index.php";
                         </script>';
     exit;
 }
 // Include config file
-require_once "/GitHub/Monarca/config/configbd.php";
+
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -79,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["first_name"] = $fname;
                             $_SESSION['sum'] = 0;
                             // Redirect user to welcome page
-                            header("location: /GitHub/Monarca/index.php");
+                            header("location: ../index.php");
                             exit;
                         } else{
                             // Password is not valid, display a generic error message
@@ -140,7 +153,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>¿No tienes una cuenta? <a href="/GitHub/Monarca/Sesion/register.php">Registrate</a>.</p>
+            <p>¿No tienes una cuenta? <a href="register.php">Registrate</a>.</p>
         </form>
     </div></center>
 </body>

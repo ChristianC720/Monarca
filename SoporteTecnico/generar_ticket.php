@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Ticket Generado</h1>
     <p><?php echo $response; ?></p>
     <a href="formulario.html" class="back-link">Volver al Formulario de Soporte</a>
-    <a href="index.html" class="back-link">Volver al Inicio</a>
+    <a href="../index.php" class="back-link">Volver al Inicio</a>
 
     <!-- Start of Tawk.to Script -->
     <script type="text/javascript">

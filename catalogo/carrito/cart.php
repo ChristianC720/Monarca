@@ -1,5 +1,18 @@
 <?php
-include '/GitHub/Monarca/config/configbd.php';
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
+
 session_start();
 
 ?>
@@ -13,18 +26,18 @@ session_start();
     <title>Carrito</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./GitHub/Monarca/css/styles.css">
+    <link rel="stylesheet" href="/GitHub/Monarca/css/styles.css">
     <script src="/GitHub/Monarca/javascript/adminjs.js"></script>
 </head>
 
 <body>
     <div>
         <?php
-        include '/GitHub/Monarca/admin/navbar.php';
+        include '../../admin/navbar.php';
         ?>
         <div class="d-flex flex-column justify-content-center align-items-center align-self-center" style="height:100vh" id="content">
-            <div class="justify-content-center align-items-center">
-                <table class="table table-striped table-bordered table-hover ">
+            <div class="justify-content-center align-items-center" style="margin-top: 10vh; height: 100%">
+                <table class="table table-striped" style="color: #d79f34" >
                     <?php
                     $sum = 0;
                     if (!isset($_SESSION['loggedin'])) {
@@ -57,7 +70,7 @@ session_start();
                                 echo "<tr><td>" . "1" . "</td><td>" . $row["Nombre"] . "</td><td>$ " . $row["Precio"] . "</td><td><a href='cart-remove.php?id={$row['id']}' class='remove_item_link'> Quitar</a></td></tr>";
                             }
                             $id = rtrim($id, ", ");
-                            echo "<tr><td></td><td>Total</td><td>$ " . $_SESSION['sum'] . "</td><td><a href='/GitHub/Monarca/catalogo/formularioPago.php' class='btn btn-primary'>Ordenar</a></td></tr>";
+                            echo "<tr><td></td><td>Total</td><td>$ " . $_SESSION['sum'] . "</td><td><a href='/GitHub/Monarca/catalogo/Pago.php' class='btn btn-primary'>Ordenar</a></td></tr>";
                             ?>
                         </tbody>
                     <?php

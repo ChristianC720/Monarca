@@ -1,9 +1,23 @@
 <?php
 /* Initialize the session */ session_start();
-require_once "/GitHub/Monarca/config/configbd.php";
+?>
+<?php
+/* Database credentials. Assuming you are running MySQL */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'monarca');
+
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
+
 mysqli_set_charset($link, "utf8");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +29,7 @@ mysqli_set_charset($link, "utf8");
     <script src="/GitHub/Monarca/javascript/adminjs.js"></script>
 </head>
 <body>
-<?php  require('/GitHub/Monarca/admin/navbar.php'); ?>
+<?php  require '../admin/navbar.php'; ?>
 <div class="row">
     <div class="side"style="background: none"></div>
     <div class="main"style="background: none"></div>
@@ -41,7 +55,26 @@ mysqli_set_charset($link, "utf8");
     </div>
     <div class="main">
         <?php
-        require_once "/GitHub/Monarca/catalogo/requestCatalogo.php";
+        /* Database credentials. Assuming you are running MySQL */
+
+        /* Attempt to connect to MySQL database */
+        $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+        // Check connection
+        if($link === false){
+            die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+        }
+        mysqli_set_charset($link,"utf8");
+
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $search = $_POST["search_item"];
+            $sql = "SELECT id, name, description, price, image FROM productos WHERE name LIKE '%{$search}%' ORDER BY price ASC";
+        } else {
+            $sql = "SELECT id, name, description, price, image FROM productos ORDER BY price ASC";
+
+        }
+        $result = mysqli_query($link, $sql);
+
         echo "<div class='product-container'>";
         while($consulta  = mysqli_fetch_array($result)){
             $imageData = base64_encode($consulta['image']);
