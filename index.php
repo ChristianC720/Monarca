@@ -18,7 +18,7 @@
     <div class="side" style="background: none">
         <div class="fakeimg" style="position: fixed; margin-left: 10px; width: max(9%)"><img src="/GitHub/Monarca/imgs/ONIKQ00.jpg" style="height: fit-content;">PUBLICIDAD</img></div></div>
     <div class="main" style="background-color: RGBA(247, 147, 30,1);">
-            <div class="navbar" style="position: relative; margin-right: 10px; height: auto"><img src="/GitHub/Monarca/imgs/ofertas.png">PUBLICIDAD</img></div>
+        <div class="navbar" style="position: relative; margin-right: 10px; height: auto"><a href='/GitHub/Monarca/catalogo/contenidoProducto.php?id=2' class='product'><img src="/GitHub/Monarca/imgs/ofertas.png">PUBLICIDAD</img></a></div>
     </div>
     <div class="side" style="background: none">
         <div class="fakeimg" style="position: fixed; margin-right: 10px; width: max(9%)"><img src="/GitHub/Monarca/imgs/ONIKQ00.jpg" style="height: fit-content;">PUBLICIDAD</img></div>

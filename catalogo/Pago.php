@@ -37,7 +37,7 @@ mysqli_query($link, $query);
             <div class="col-md-8_mx-auto">
                 <div class="navbar">
                     <ul><li><h3>Su pedido está en camino. Gracias por comprar con nosotros.</h3></li></ul>
-                    <ul><li><a href="index.php"><button class="btn button"> Click aquí para seguir viendo más productos.</button></a></li></ul>
+                    <ul><li><a href="../../index.php"><button class="btn button"> Click aquí para seguir viendo más productos.</button></a></li></ul>
                 </div>
             </div>
         </div>
