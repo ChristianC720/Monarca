@@ -21,11 +21,11 @@
         <!-- REDIRECCIONAMIENTO A: CATÁLOGO -->
         <li><a href="/GitHub/Monarca/catalogo/catalogo.php" class="link">Catálogo</a></li>
 
-        <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
-        <li><a href="/GitHub/Monarca/SoporteTecnico/index.html" class="link">Soporte al cliente</a></li>
+        <!-- REDIRECCIONAMIENTO A: ACERCA DE -->
+        <li><a href="/GitHub/Monarca/admin/acercade.php" class="link">Acerca de</a></li>
 
         <!-- REDIRECCIONAMIENTO A: SOPORTE AL CLIENTE -->
-        <li><a href="/GitHub/Monarca/SoporteTecnico/index.html" class="link">Soporte al cliente</a></li>
+        <li><a href="/GitHub/Monarca/SoporteTecnico/index.php" class="link">Soporte al cliente</a></li>
 
         <!-- REDIRECCIONAMIENTO A: CARRITO -->
         <li><a href="/GitHub/Monarca/catalogo/carrito/cart.php" class="fa fa-shopping-cart"><?php if(isset($_SESSION['sum'])){ echo '<br>' . $_SESSION['sum']  ? : '00.00';} ?></a></li>

@@ -32,15 +32,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && $_SESSION["
     <script src="/GitHub/Monarca/javascript/adminjs.js"></script>
 </head>
 <body>
-<style>
-    body{ font: 14px sans-serif; }
-    .wrapper{ width: 360px; padding: 20px; }
-    /* Style tab links */
-    #Home {background-color: floralwhite;}
-    #News {background-color: floralwhite;}
-    #Contact {background-color: floralwhite;}
-    #About {background-color: floralwhite;}
-</style>
+<style> .wrapper{ width: 360px; padding: 20px; } </style>
 <?php  require('navbar.php'); ?>
 <div class="row">
     <div class="side" style="background: none"></div>
@@ -280,8 +272,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['ElProd']) {
 
     <div class="side" style="background: none"></div>
     </div>
-<div class="footer" style="height: 100px">
-    <h2>Footer</h2>
 </div>
 </body>
+
 </html>

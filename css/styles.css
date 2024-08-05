@@ -5,6 +5,11 @@
     padding: 0;
     margin: 0;
 }
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
 .product {
     width: fit-content;
     margin: 0 auto;
@@ -196,107 +201,14 @@
 .footer {
     height: fit-content;
     position: relative;
-    left: 0;
     bottom: 0;
     width: 100%;
-    background: #ddd;
+    background: RGBA(247, 147, 30,1 );
     color: black;
     text-align: center;
 }
-/*
-.tituloCatalogo{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    text-align: center;
-}
-.catalogo{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    
-}
-.book{
-    display: grid;
-    width: 70%;
-    margin-bottom: 30px;
-    height: 700px;
-}
-.book img{
-    width: 100%;
-}
-.book span{
-    display: block;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    
-}
-.book span b{
-    color: #00BB2D;
-}
-.book .titleBook{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
-.book a{
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    background-color: #00BB2D;
-    color: white;
-    padding: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    align-self: end;
-}
-*/
-/* RESPONSIVIDAAAD */
-.navbar .icon {
-    display: none;
-}
 
-@media screen and (max-width: 600px) {
-    .navbar a:not(:first-child) {display: none;}
-    .navbar a.icon {
-        float: right;
-        display: block;
-    }
+.footer {
+    clear: both;
+    height: 200px;
 }
-
-@media screen and (max-width: 600px) {
-    .navbar.responsive {position: relative;}
-    .navbar.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .navbar.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
-/*    .catalogo{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .header{
-        grid-template-columns: 1fr 1fr;
-        justify-items: start;
-        align-content: center;
-        }
-    .header li{
-        list-style: none;
-        display: inline;
-        margin-right: 50px;
-    }
-    .header img{
-        display: block;
-        width: 70px;
-        margin-left: 70px;
-    }
-    ul{
-        display: flex;
-        align-items: center;
-    }
-*/

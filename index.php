@@ -51,7 +51,7 @@
 </div>
 
 <div class="footer" style="height: 100px">
-    <h2>Footer</h2>
+    <h2></h2>
 </div>
 </body>
 </html>

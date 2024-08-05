@@ -8,10 +8,13 @@
 
 </head>
 <body>
-    <h1>Servicio al Cliente</h1>
+    <h1>Soporte al Cliente</h1>
     <p>Selecciona una opción para continuar:</p>
     <ul>
         <li><a href="Formulario.html">Soporte Técnico</a></li>
+    </ul>
+    <ul>
+        <li><a href="../index.php">Regresar</a></li>
     </ul>
 </body>
 </html>

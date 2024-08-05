@@ -158,7 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Registrarse">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reiniciar">
             </div>
-            <p>¿Ya tienes una cuenta? <a href="C:/Users/Documents/GitHub/Monarca/Sesion/login.php">Inicia Sesión</a>.</p>
+            <p>¿Ya tienes una cuenta? <a href="login.php">Inicia Sesión</a>.</p>
         </form>
     </div></center>    
 </body>

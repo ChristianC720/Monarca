@@ -55,9 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die('Error en la consulta: ' . mysqli_error($link));
     }
 
-    $libro = mysqli_fetch_assoc($resultado);
+    $consulta = mysqli_fetch_assoc($resultado);
 
-    if (!$libro) {
+    if (!$consulta) {
         die('No se encontró un producto con el ID proporcionado.');
     }
 
@@ -120,16 +120,17 @@ mysqli_close($link);
 </head>
 <body>
     <h1>Editar un producto</h1>
-    <a href="./GitHub/Monarca/indexadmin.php">Regresar</a>
+    <a href="editar.php">Regresar a Lista</a>
     <form action="" method="POST" enctype="multipart/form-data">
         <label for="">nombre</label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre" value="<?php echo htmlspecialchars($consulta['name']); ?> ">
         <label for="">precio</label>
-        <input type="number" name="precio">
-        <label for="">Proveedor</label>
-        <input type="text" name="descripcion">
+        <?php $precio2 = (double)htmlspecialchars($consulta['price']); ?>
+        <input type="number" name="precio" value="<?php echo $precio2 = (double)htmlspecialchars($consulta['price']); ?>" step="0.01">
+        <label for="">Descripción</label>
+        <input type="text" name="descripcion" value="<?php echo htmlspecialchars($consulta['description']); ?> ">
         <label for="">imagen</label>
-        <input type="file" accept="image/*" name="imagen">
+        <input type="file" accept="image/*" name="imagen" value="">
         <input type="submit" value="Actualizar">
     </form>
 </body>
