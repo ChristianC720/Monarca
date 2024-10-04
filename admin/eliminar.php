@@ -22,7 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['tabla'])) {
     $sqlEliminar = "DELETE FROM productos WHERE id=$id";
 
     if (mysqli_query($link, $sqlEliminar)) {
-        echo "Registro eliminado con éxito";
+        echo'<script type="text/javascript">
+        alert("Registro eliminado con éxito");
+        window.location.href="/GitHub/Monarca/admin/editar.php";
+        </script>';
     } else {
         echo "Error eliminando el registro: " . mysqli_error($link);
     }

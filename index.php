@@ -28,7 +28,7 @@
         <div class="side" style="background: none"></div>
     <div class="main">
         <div class="product navbar" style="font-size: 5vh">SUGERIDOS</div><br>
-        <?php
+        <?php 
         require_once "catalogo/requestCatalogo.php";
         $rownumbers = 1;
         echo "<div class='product-container'>";

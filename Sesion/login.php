@@ -130,7 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body><center>
     <div class="wrapper">
-        <h2>Iniciar sesión</h2>
+
         <p>Por favor, introduzca sus datos para Iniciar Sesión.</p>
 
         <?php 
